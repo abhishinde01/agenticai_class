@@ -84,6 +84,8 @@ pip install ollama pydantic
 pip install "mcp[cli]" numpy
 
 pip install llama-index llama-index-llms-ollama llama-index-tools-mcp
+pip install SQLAlchemy
+pip install mysqlclient
 
 ConversationBufferMemory: Stores the complete, raw history (Buffer).
 ConversationSummaryMemory: Stores a continuously updated summary of the conversation (Summarization).
