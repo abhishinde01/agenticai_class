@@ -1,6 +1,7 @@
 """
 Docstring for day7.planningagent
-Planning (Ollama LLM): The LLM uses a dedicated prompt to output a structured plan (e.g., a list of steps).
+Planning (Ollama LLM): The LLM uses a dedicated prompt to 
+output a structured plan (e.g., a list of steps).
 """
 from langchain_ollama import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
