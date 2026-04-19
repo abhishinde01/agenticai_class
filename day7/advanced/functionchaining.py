@@ -1,7 +1,7 @@
 from langchain_community.chat_models import ChatOllama
 from langchain.agents import create_agent
 from langchain.tools import tool
-from langchain.agents.agent_types import AgentType
+from  langchain_classic.agents import AgentType
 from langchain_core.prompts import ChatPromptTemplate
 """
 This takes the basic Agent Executor and gives it tools that are designed to work sequentially. This requires the LLM (Ollama) to perform multi-step reasoning and function chaining (using the output of one tool as the input for the next).

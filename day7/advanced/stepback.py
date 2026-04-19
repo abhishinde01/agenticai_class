@@ -1,18 +1,28 @@
 """
 Docstring for agentloop.advanced.stepback
 
-This advanced technique prevents the LLM from getting bogged down in specifics. It forces the LLM to generate a generalized, "step-back" question first, uses that to retrieve general context, and then answers the original, specific question. This is combined with LangChain Routers.
+This advanced technique prevents the LLM from getting bogged down in specifics. 
+It forces the LLM to generate a generalized,
+ "step-back" question first, 
+ uses that to retrieve general context,
+   and then answers the original,
+     specific question. 
+     This is combined with LangChain Routers.
 """
 
 from langchain_community.chat_models import ChatOllama
 from langchain_core.prompts import ChatPromptTemplate
 from langchain_core.runnables import RunnablePassthrough, RunnableSequence
+from langchain_core.output_parsers import StrOutputParser
 
 # --- A. Define Step-Back Prompt ---
 STEP_BACK_PROMPT = ChatPromptTemplate.from_template(
     """
-    You are an expert at simplification. Given a highly specific question, generate a single, 
-    more general, conceptual question that a human would ask to understand the core idea first.
+    You are an expert at simplification. 
+    Given a highly specific question, generate a single, 
+    more general,
+     conceptual question that a human would ask to understand
+       the core idea first.
     
     Example:
     Original: What are the latency benefits of using a CDN with HTTP/3?
@@ -73,7 +83,7 @@ print(f"\n--- Step-Back Prompting System ---")
 print(f"User Query: {user_query}")
 print("-" * 40)
 
-final_answer = full_chain.invoke(user_query)
+final_answer = full_chain.invoke({"question":user_query})
 
 print(f"\n✅ Final Answer (Conceptual Framing):")
 print(final_answer)
