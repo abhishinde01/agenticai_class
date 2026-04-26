@@ -82,7 +82,7 @@ def run_agent_turn(name, agent_chain, current_history, new_message):
         tool_arg = tool_call_match.group(2).strip()
         logger.info(f"{name} requested tool: {tool_name} with args: {tool_arg}")
         
-        observation = simulated_search(tool_arg)
+        observation = simulated_search.invoke(tool_arg)
         
         rerun_history = current_history + [
             f"[Tool Used: {tool_name}('{tool_arg}')]",
