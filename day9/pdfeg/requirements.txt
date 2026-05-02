@@ -6,3 +6,4 @@ pdfplumber
 pypdf
 reportlab
 python-magic-bin
+langchain-classic

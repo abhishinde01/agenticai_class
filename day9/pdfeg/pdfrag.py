@@ -9,8 +9,7 @@ from langchain_community.document_loaders import PDFPlumberLoader
 from langchain_text_splitters import RecursiveCharacterTextSplitter
 from langchain_chroma import Chroma
 from langchain_ollama import OllamaEmbeddings, ChatOllama
-from langchain.chains import RetrievalQA
-
+from langchain_classic.chains import RetrievalQA
 # --- STEP 1: CREATE SAMPLE PDF WITH A REAL TABLE ---
 def create_sample_pdf(filename="table_test.pdf"):
     doc = SimpleDocTemplate(filename, pagesize=letter)
